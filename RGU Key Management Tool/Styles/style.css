@@ -1,0 +1,158 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+#pnlHeader {
+    margin-bottom: 50px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+}
+
+#lblHeader {
+    font: normal 30px/normal 'Montserrat', sans-serif;
+    color: #89867e;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.master {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.mainButtons, .applyFilter {
+    margin: 15px 30px;
+}
+
+.mainButtons, .applyFilter, .reportButtons {
+    background-color: white;
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+    color: #89867e;
+    font-weight: bold;
+    padding: 25px;
+    text-decoration: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.reportButtons {
+    margin: 18px 30px;
+}
+
+.mainButtons:hover, .applyFilter:hover, .reportButtons:hover {
+    background-color: #89867e;
+    color: white;
+}
+
+.reportPanel {
+    display: inline-block;
+    border: 1px solid #89867e;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    height: auto;
+    width: 31%;
+}
+
+.sidePanel {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #89867e;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    height: auto;
+    width: 31%;
+    position: absolute; 
+    right: 5%;
+}
+
+.mainFilters {
+    padding: 10px;
+    margin: 18px 30px;
+    width: 100em;
+}
+
+/* Grid styling*/
+.mydatagrid {
+    width: 90%;
+    border: solid 2px black;
+}
+
+.header {
+    background-color: #646464;
+    font-family: Arial;
+    color: White;
+    border: none 0px transparent;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.rows {
+    background-color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    color: #000;
+    min-height: 25px;
+    text-align: left;
+    border: none 0px transparent;
+}
+
+.rows:hover {
+    background-color: #ff8000;
+    font-family: Arial;
+    color: #fff;
+    text-align: left;
+}
+
+.selectedrow {
+    background-color: #ff8000;
+    font-family: Arial;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+}
+
+.mydatagrid td {
+    padding: 5px;
+}
+
+.mydatagrid th {
+    padding: 5px;
+}
+
+
+/* Mobile optimisation */
+@media screen and (min-width: 150px) and (max-width: 1000px) {
+    .reportPanel {
+        width: 100%;
+    }
+
+    .mydatagrid {
+        width: 80%;
+    }
+
+    .sidePanel {
+        width: 100%;
+        position: relative;
+        right: auto;
+    }
+
+    .reportButtons {
+        width: 80%;
+    }
+
+    .applyFilter {
+        width: 80%;
+    }
+
+    .mainFilters {
+        width: 80%;
+    }
+
+    .mainButtons {
+        width: 100%;
+    }
+}
