@@ -51,7 +51,7 @@
     display: inline-block;
     border: 1px solid #89867e;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 50px;
     height: auto;
     width: 31%;
 }
@@ -61,7 +61,7 @@
     display: inline-block;
     border: 1px solid #89867e;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 50px;
     height: auto;
     width: 31%;
     position: absolute; 

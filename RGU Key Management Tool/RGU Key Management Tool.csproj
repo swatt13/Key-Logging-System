@@ -18,8 +18,8 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
@@ -44,12 +44,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ExcelDataReader, Version=3.4.2.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.4.2\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -109,24 +113,228 @@
     <Content Include="App_Data\KeyLogging_log.ldf">
       <DependentUpon>KeyLogging.mdf</DependentUpon>
     </Content>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="bin\ExcelDataReader.dll" />
+    <Content Include="bin\ExcelDataReader.xml" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Phyyl.Attachments.dll" />
+    <Content Include="bin\RGU Key Management Tool.dll" />
+    <Content Include="bin\RGU Key Management Tool.pdb" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="bin\RGU Key Management Tool.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\RGU Key Management Tool.csproj.CopyComplete" />
+    <Content Include="obj\Debug\RGU Key Management Tool.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\RGU Key Management Tool.csprojAssemblyReference.cache" />
+    <Content Include="obj\Release\CSAutoParameterize\original\Web.config" />
+    <Content Include="obj\Release\CSAutoParameterize\transformed\Web.config" />
+    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csc.exe.config" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csc.rsp" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csi.exe.config" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csi.rsp" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\vbc.exe.config" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\vbc.rsp" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Bundle.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap-theme.css.map" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap-theme.min.css.map" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.css.map" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.min.css.map" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-3.3.1.min.map" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="obj\Release\Package\PackageTmp\Site.Master" />
+    <Content Include="obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="obj\Release\RGU Key Management Tool.csproj.CopyComplete" />
+    <Content Include="obj\Release\RGU Key Management Tool.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\RGU Key Management Tool.csprojAssemblyReference.cache" />
+    <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Media\Images\favicon.ico" />
+    <Content Include="obj\Debug\RGU Key Management Tool.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\RGU Key Management Tool.dll" />
+    <Content Include="obj\Debug\RGU Key Management Tool.pdb" />
+    <Content Include="obj\Release\CSAutoParameterize.parameters.xml" />
+    <Content Include="obj\Release\Package\PackageTmp\App_Data\KeyLogging.mdf" />
+    <Content Include="obj\Release\Package\PackageTmp\App_Data\KeyLogging_log.ldf">
+      <DependentUpon>KeyLogging.mdf</DependentUpon>
+    </Content>
+    <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.pdb" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\RGU Key Management Tool.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\RGU Key Management Tool.pdb" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csc.exe" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csi.exe" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.AppContext.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Console.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\vbc.exe" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Optimization.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\WebGrease.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap-theme.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap-theme.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\Site.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Default.aspx" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="obj\Release\Package\PackageTmp\Global.asax" />
+    <Content Include="obj\Release\Package\PackageTmp\Media\Images\favicon.ico" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-3.3.1.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-3.3.1.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\modernizr-2.8.3.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\DetailsView.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\Focus.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\GridView.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\Menu.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\SmartNav.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\TreeView.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\WebForms.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\WebParts.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\style.css" />
+    <Content Include="obj\Release\Package\RGU Key Management Tool.SourceManifest.xml" />
+    <Content Include="obj\Release\RGU Key Management Tool.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\RGU Key Management Tool.dll" />
+    <Content Include="obj\Release\RGU Key Management Tool.pdb" />
+    <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -157,8 +365,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="Styles\style.css" />
-    <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +383,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -182,15 +397,14 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Debug\__testMsDeployConnection__\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\" />
+    <Folder Include="obj\Release\TempPE\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

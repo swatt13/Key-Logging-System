@@ -9,16 +9,24 @@
         $(document).ready(function () {
             $(function () {
                 $('#<%=txtDateFilter.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
+                $('#<%=txtFrom.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
+                $('#<%=txtTo.ClientID%>').datepicker({ dateFormat: 'dd/mm/yy' });
             });
         });
     </script>
 
+    <asp:Panel runat="server" ID="pnlError" CssClass="master" Style="text-align: center;" Visible="false">
+        <asp:Label runat="server" ID="lblError" Text="No Access" Style="color: red; font-size: 28px" />
+        <br />
+        <asp:Label runat="server" ID="lblAdmin" Text="" Style="color: red; font-size: 24px" />
+    </asp:Panel>
+
     <asp:Panel runat="server" ID="pnlMaster" CssClass="master">
 
         <asp:Panel runat="server" ID="pnlAccessMenu" Visible="true" Style="text-align: center; margin-bottom: 4%;">
-            <asp:Button runat="server" ID="btnRegister" CssClass="mainButtons" Width="42%" Text="Register" OnClick="btnRegister_Click" />
-            <asp:Button runat="server" ID="btnImport" CssClass="mainButtons" Width="42%" Text="Import Data" OnClick="btnImport_Click" />
-            <asp:Button runat="server" ID="btnAdmin" CssClass="mainButtons" Width="42%" Text="Administration" OnClick="btnAdmin_Click" />
+            <asp:Button runat="server" ID="btnRegister" CssClass="mainButtons" Width="42%" Text="Register" OnClick="BtnRegister_Click" />
+            <asp:Button runat="server" ID="btnImport" CssClass="mainButtons" Width="42%" Text="Import Data" OnClick="BtnImport_Click" />
+            <asp:Button runat="server" ID="btnAdmin" CssClass="mainButtons" Width="42%" Text="Administration" OnClick="BtnAdmin_Click" />
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlReports" CssClass="reportPanel" Visible="true">
@@ -36,28 +44,44 @@
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlFilters" CssClass="sidePanel" Visible="true">
-            <asp:TextBox runat="server" ID="txtKeyFilter" PlaceHolder="Enter your key id" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your key identificator'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter your key id" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your key identificator'" />
             <br />
-            <asp:TextBox runat="server" ID="txtRoomFilter" PlaceHolder="Enter room number" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter room number'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter room number" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter room number'" />
             <br />
-            <asp:TextBox runat="server" ID="txtUserFilter" PlaceHolder="Enter user rented to" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter user rented to'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtUserFilter" PlaceHolder="Enter user rented to" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter user rented to'" />
+            <asp:Button runat="server" ID="btnResetFilter" CssClass="applyFilter" Text="Reset entered filters" Style="padding: 10px;" OnClick="BtnResetFilter_Click1" />
             <br />
-            <asp:TextBox runat="server" ID="txtDateFilter" PlaceHolder="Enter rented from date" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter rented from date'" />
-            <asp:Button runat="server" ID="btnApplyFilter" CssClass="applyFilter" Text="Apply entered filters" Style="padding: 10px;" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtDateFilter" PlaceHolder="Enter rented from date" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter rented from date'" />
+            <asp:Button runat="server" ID="btnApplyFilter" CssClass="applyFilter" Text="Apply entered filters" Style="padding: 10px;" OnClick="BtnApplyFilter_Click1" />
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlRegister" Style="text-align: center;" Visible="true">
+
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Key Id" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Id'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Key Desc" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Desc'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Key Loc" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Loc'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRenter" PlaceHolder="Renter Name" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Renter Name'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtFrom" PlaceHolder="From Date" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From Date'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtTo" PlaceHolder="To Date" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To Date'" />
+            <asp:Button runat="server" ID="btnAddRental" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="btnAddRental_Click" />
+
+            <br />
+            <asp:Label runat="server" ID="lblAddError" Style="color: red; font-size: 18px; margin-bottom: 20px;" Text="Please make sure all the fields are filled in before submitting." Visible="false" />
+            <br />
+
             <asp:GridView runat="server" ID="gvKeys" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
                 ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="100%">
                 <Columns>
-                    <asp:BoundField HeaderText="Key Id" DataField="keyId" />
-                    <asp:BoundField HeaderText="Key Description" DataField="keyDesc" />
-                    <asp:BoundField HeaderText="Renter's Full Name" DataField="rentName" />
-                    <asp:BoundField HeaderText="From Date" DataField="rentFrom" />
-                    <asp:BoundField HeaderText="Return Date" DataField="rentTo" />
-                    <asp:BoundField HeaderText="Days rented" DataField="rentCount" />
+                    <asp:BoundField HeaderText="Key Id" DataField="KeyId" />
+                    <asp:BoundField HeaderText="Key Description" DataField="KeyDesc" />
+                    <asp:BoundField HeaderText="Key Location" DataField="KeyLoc" />
+                    <asp:BoundField HeaderText="Renter's Full Name" DataField="CurrentRenter" />
+                    <asp:BoundField HeaderText="From Date" DataField="RentFrom" />
+                    <asp:BoundField HeaderText="Return Date" DataField="RentTo" />
+                    <asp:BoundField HeaderText="Days rented" DataField="rentalTime" />
                 </Columns>
             </asp:GridView>
+
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlImport" Visible="false">
@@ -69,7 +93,7 @@
                             <asp:FileUpload runat="server" ID="fUpExcel"/>
                         </asp:TableCell>
                         <asp:TableCell>
-                            <asp:Button runat="server" ID="btnUpload" CssClass="mainButtons" OnClick="btnUpload_Click" style="padding: 10px;" Text="Upload the file" />
+                            <asp:Button runat="server" ID="btnUpload" CssClass="mainButtons" OnClick="BtnUpload_Click" style="padding: 10px;" Text="Upload the file" />
                         </asp:TableCell>
                     </asp:TableRow>
                 </asp:Table>
@@ -83,9 +107,16 @@
                 <Columns>
                     <asp:BoundField HeaderText="LoginID" DataField="userId" />
                     <asp:BoundField HeaderText="Full Name" DataField="userName" />
+                    <asp:BoundField HeaderText="Access Level" DataField="accessLevel" />
                 </Columns>
             </asp:GridView>
         </asp:Panel>
         </center>
+
+    </asp:Panel>
+
+    <asp:Panel runat="server" ID="pnlFooter" Visible="true" CssClass="master" Style="text-align: center; margin-top: 50px;">
+        <asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="mailto:1403780@rgu.ac.uk?subject=Access" Text="Contact for access" Style="margin-right: 20px; font-size: 18px; color: #89867e"></asp:HyperLink>
+        <asp:HyperLink ID="lnkBug" runat="server" NavigateUrl="mailto:1403780@rgu.ac.uk?subject=Bug" Text="Report Bugs" Style="margin-right: 20px; margin-top: 20px; font-size: 18px; color: #89867e"></asp:HyperLink>
     </asp:Panel>
 </asp:Content>
