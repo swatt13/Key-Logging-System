@@ -10,7 +10,7 @@
     <UseGlobalApplicationHostFile />
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <ActiveDebugTarget />
-    <NameOfLastUsedPublishProfile>RGUKeyManagementTool - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>RGUKeyManager - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

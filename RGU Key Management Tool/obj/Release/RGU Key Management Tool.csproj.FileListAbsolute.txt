@@ -69,3 +69,63 @@ C:\Users\irmmz\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key 
 C:\Users\irmmz\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.dll
 C:\Users\irmmz\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.pdb
 C:\Users\irmmz\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.csprojAssemblyReference.cache
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\RGU Key Management Tool.dll.config
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\RGU Key Management Tool.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\RGU Key Management Tool.pdb
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\csc.exe
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\csc.exe.config
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\csc.rsp
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\csi.exe
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\csi.exe.config
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\csi.rsp
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.AppContext.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Console.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.IO.Pipes.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.Claims.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.ValueTuple.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Xml.XPath.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\vbc.exe
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\vbc.exe.config
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\vbc.rsp
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\VBCSCompiler.exe
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\System.IO.Compression.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\ExcelDataReader.xml
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\System.Web.Optimization.xml
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\Newtonsoft.Json.xml
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\Antlr3.Runtime.pdb
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.csprojAssemblyReference.cache
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.csproj.CoreCompileInputs.cache
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.csproj.CopyComplete
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.dll
+C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Release\RGU Key Management Tool.pdb

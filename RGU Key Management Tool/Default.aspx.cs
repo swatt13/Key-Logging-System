@@ -11,10 +11,13 @@ namespace RGU_Key_Management_Tool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadData();
-
+            if (!Page.IsPostBack)
+            {
+                LoadData();
+            }
+            
             // Security lockdown, currently only restricted for my rgu login and personal login (can be easily changed to lookup administrators when user table is implemented)
-            if (!Page.User.Identity.Name.Contains("1403780") && !Page.User.Identity.Name.Contains("irm"))
+            if (!Page.User.Identity.Name.Contains("1403780") && !Page.User.Identity.Name.Contains("irm") && !Page.User.Identity.Name.Contains("zayy"))
             {
                 pnlError.Visible = true;
                 pnlMaster.Visible = false;
@@ -125,11 +128,11 @@ namespace RGU_Key_Management_Tool
             {
                 if (query.Contains("WHERE"))
                 {
-                    query = query + " AND KeyLoc = ' " + txtRoomFilter.Text + "' ";
+                    query = query + " AND KeyLoc LIKE '%" + txtRoomFilter.Text + "%' ";
                 }
                 else
                 {
-                    query = query + "WHERE KeyLoc = ' " + txtRoomFilter.Text + "' ";
+                    query = query + "WHERE KeyLoc LIKE '%" + txtRoomFilter.Text + "%' ";
                 }
             }
 
@@ -193,7 +196,7 @@ namespace RGU_Key_Management_Tool
             txtDateFilter.Text = String.Empty;
         }
 
-        protected void btnAddRental_Click(object sender, EventArgs e)
+        protected void BtnAddRental_Click(object sender, EventArgs e)
         {
             if (!(String.IsNullOrEmpty(txtKeyId.Text) &&
                 String.IsNullOrEmpty(txtKeyDesc.Text) &&

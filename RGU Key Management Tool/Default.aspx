@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RGU_Key_Management_Tool._Default" %>
+﻿<%@ Page Title="RGU Key Manager" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RGU_Key_Management_Tool._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="pnlMainContent" runat="server">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
@@ -44,9 +44,9 @@
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlFilters" CssClass="sidePanel" Visible="true">
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter your key id" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your key identificator'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter your key identificator" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your key identificator'" />
             <br />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter room number" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter room number'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter key location" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter key location'" />
             <br />
             <asp:TextBox runat="server" autocomplete="off" ID="txtUserFilter" PlaceHolder="Enter user rented to" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter user rented to'" />
             <asp:Button runat="server" ID="btnResetFilter" CssClass="applyFilter" Text="Reset entered filters" Style="padding: 10px;" OnClick="BtnResetFilter_Click1" />
@@ -57,13 +57,13 @@
 
         <asp:Panel runat="server" ID="pnlRegister" Style="text-align: center;" Visible="true">
 
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Key Id" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Id'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Key Desc" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Desc'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Key Loc" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Loc'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Physical ID" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Id'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Key Description" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Desc'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Key Location" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Loc'" />
             <asp:TextBox runat="server" autocomplete="off" ID="txtRenter" PlaceHolder="Renter Name" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Renter Name'" />
             <asp:TextBox runat="server" autocomplete="off" ID="txtFrom" PlaceHolder="From Date" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From Date'" />
             <asp:TextBox runat="server" autocomplete="off" ID="txtTo" PlaceHolder="To Date" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To Date'" />
-            <asp:Button runat="server" ID="btnAddRental" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="btnAddRental_Click" />
+            <asp:Button runat="server" ID="btnAddRental" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="BtnAddRental_Click" />
 
             <br />
             <asp:Label runat="server" ID="lblAddError" Style="color: red; font-size: 18px; margin-bottom: 20px;" Text="Please make sure all the fields are filled in before submitting." Visible="false" />
