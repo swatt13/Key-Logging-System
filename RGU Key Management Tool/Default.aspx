@@ -101,8 +101,14 @@
 
         <asp:Panel runat="server" ID="pnlAdmin" Visible="false">
             <asp:GridView runat="server" ID="gvUsers" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
-                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="50%">
+                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="50%" OnRowCommand="gvUsers_RowCommand">
                 <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="btnDelete" CssClass="mainButtons" Width="80%" Style="padding: 5px; margin: 5px;" runat="server" CommandName="DeleteRecord" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Delete" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField HeaderText="UniqueID" DataField="Id" />
                     <asp:BoundField HeaderText="LoginID" DataField="RguId" />
                     <asp:BoundField HeaderText="Full Name" DataField="FullName" />
                     <asp:BoundField HeaderText="Access Level" DataField="AccessLevel" />

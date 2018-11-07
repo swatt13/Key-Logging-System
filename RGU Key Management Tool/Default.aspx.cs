@@ -191,11 +191,11 @@ namespace RGU_Key_Management_Tool
                                     "KeyDesc = '" + txtKeyDesc.Text + "', " +
                                     "currentRenter = '" + txtRenter.Text + "', " +
                                     "KeyLoc = '" + txtKeyLoc.Text + "', " +
-                                    "RentFrom = CONVERT(datetime, '" + txtFrom.Text + "', 103) ";
+                                    "RentFrom = CONVERT(datetime, '" + txtFrom.Text + "', 103)";
                                     
                     // if the to date is empty, ignore it, else add it to the query
-                    if (String.IsNullOrEmpty(txtTo.Text)){
-                        query = query + "RentTo = CONVERT(datetime, '" + txtTo.Text + "', 103) WHERE RentalId = " + txtRentalId.Text;
+                    if (!String.IsNullOrEmpty(txtTo.Text)){
+                        query = query + ", RentTo = CONVERT(datetime, '" + txtTo.Text + "', 103) WHERE RentalId = " + txtRentalId.Text;
                     } else
                     {
                         query = query + " WHERE RentalId = " + txtRentalId.Text;
@@ -338,7 +338,6 @@ namespace RGU_Key_Management_Tool
         {
             if (e.CommandName == "EditRecord")
             {
-
                 txtTo.Visible = true;
 
                 int id = Convert.ToInt32(e.CommandArgument);
@@ -360,6 +359,29 @@ namespace RGU_Key_Management_Tool
                 txtTo.Text = gvKeys.Rows[id].Cells[7].Text;
 
                 btnAddRental.Text = "Update";
+            }
+        }
+
+        protected void gvUsers_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteRecord")
+            {
+                int id = Convert.ToInt32(e.CommandArgument);
+
+                DataTable dtUsers = new DataTable();
+                string query = "DELETE FROM Users WHERE Id = " + gvUsers.Rows[id].Cells[1].Text;
+
+                SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["conString"].ToString());
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dtUsers);
+                conn.Close();
+                da.Dispose();
+
+                gvUsers.DataSource = dtUsers;
+                gvUsers.DataBind();
             }
         }
 
