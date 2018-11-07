@@ -30,23 +30,17 @@
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlReports" CssClass="reportPanel" Visible="true">
-            <asp:Button runat="server" ID="Button1" CssClass="reportButtons" Text="Report 1" />
-            <asp:Button runat="server" ID="Button4" CssClass="reportButtons" Text="Report 4" />
-            <asp:Button runat="server" ID="Button7" CssClass="reportButtons" Text="Report 7" />
+            <asp:Button runat="server" ID="btnReport1" CssClass="reportButtons" Text="List completed rentals" OnClick="BtnReport1_Click" />
             <br />
-            <asp:Button runat="server" ID="Button2" CssClass="reportButtons" Text="Report 2" />
-            <asp:Button runat="server" ID="Button5" CssClass="reportButtons" Text="Report 5" />
-            <asp:Button runat="server" ID="Button8" CssClass="reportButtons" Text="Report 8" />
+            <asp:Button runat="server" ID="btnReport2" CssClass="reportButtons" Text="List over 14 days rentals" OnClick="BtnReport2_Click" />
             <br />
-            <asp:Button runat="server" ID="Button3" CssClass="reportButtons" Text="Report 3" />
-            <asp:Button runat="server" ID="Button6" CssClass="reportButtons" Text="Report 6" />
-            <asp:Button runat="server" ID="Button9" CssClass="reportButtons" Text="Report 9" />
+            <asp:Button runat="server" ID="btnReport3" CssClass="reportButtons" Text="List over 31 days rentals" OnClick="BtnReport3_Click" />
         </asp:Panel>
 
         <asp:Panel runat="server" ID="pnlFilters" CssClass="sidePanel" Visible="true">
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter your key identificator" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your key identificator'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter the identificator" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the identificator'" />
             <br />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter key location" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter key location'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter the location" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the location'" />
             <br />
             <asp:TextBox runat="server" autocomplete="off" ID="txtUserFilter" PlaceHolder="Enter user rented to" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter user rented to'" />
             <asp:Button runat="server" ID="btnResetFilter" CssClass="applyFilter" Text="Reset entered filters" Style="padding: 10px;" OnClick="BtnResetFilter_Click1" />
@@ -57,12 +51,13 @@
 
         <asp:Panel runat="server" ID="pnlRegister" Style="text-align: center;" Visible="true">
 
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Physical ID" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Id'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Key Description" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Desc'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Key Location" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Key Loc'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtRenter" PlaceHolder="Renter Name" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Renter Name'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtFrom" PlaceHolder="From Date" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From Date'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtTo" PlaceHolder="To Date" CssClass="mainFilters" style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To Date'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRentalId" CssClass="mainFilters"  Visible="false" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Physical ID" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Physical ID'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Description" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Location" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Location'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRenter" PlaceHolder="Renter Name" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Renter Name'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtFrom" PlaceHolder="From Date" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From Date'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtTo" Visible="false" PlaceHolder="To Date" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To Date'" />
             <asp:Button runat="server" ID="btnAddRental" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="BtnAddRental_Click" />
 
             <br />
@@ -70,46 +65,60 @@
             <br />
 
             <asp:GridView runat="server" ID="gvKeys" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
-                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="100%">
+                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="100%" OnRowDataBound="gvKeys_RowDataBound" OnRowCommand="gvKeys_RowCommand">
                 <Columns>
-                    <asp:BoundField HeaderText="Key Id" DataField="KeyId" />
-                    <asp:BoundField HeaderText="Key Description" DataField="KeyDesc" />
-                    <asp:BoundField HeaderText="Key Location" DataField="KeyLoc" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:Button ID="btnEdit" CssClass="mainButtons" Width="80%" style="padding:5px; margin:5px;" runat="server" CommandName="EditRecord" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Edit" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField HeaderText="UniqueId" DataField="RentalId" />
+                    <asp:BoundField HeaderText="PhysicalId" DataField="KeyId" />
+                    <asp:BoundField HeaderText="Description" DataField="KeyDesc" />
+                    <asp:BoundField HeaderText="Location" DataField="KeyLoc" />
                     <asp:BoundField HeaderText="Renter's Full Name" DataField="CurrentRenter" />
                     <asp:BoundField HeaderText="From Date" DataField="RentFrom" />
                     <asp:BoundField HeaderText="Return Date" DataField="RentTo" />
                     <asp:BoundField HeaderText="Days rented" DataField="rentalTime" />
                 </Columns>
             </asp:GridView>
-
-        </asp:Panel>
-
-        <asp:Panel runat="server" ID="pnlImport" Visible="false">
-            <center>
-                <asp:Label runat="server" ID="lblFileUpload" CssClass="Headers" Style="font-size: 20px; margin-bottom: 10px;">Please use this feature to load excel file with keys into the system</asp:Label>
-                <asp:Table runat="server" style="border: 0;">
-                    <asp:TableRow>
-                        <asp:TableCell>
-                            <asp:FileUpload runat="server" ID="fUpExcel"/>
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:Button runat="server" ID="btnUpload" CssClass="mainButtons" OnClick="BtnUpload_Click" style="padding: 10px;" Text="Upload the file" />
-                        </asp:TableCell>
-                    </asp:TableRow>
-                </asp:Table>
-            </center>
         </asp:Panel>
 
         <center>
-        <asp:Panel runat="server" ID="pnlAdmin" Visible="false" Width="50%">
+        <asp:Panel runat="server" ID="pnlImport" Visible="false">
+            <asp:Label runat="server" ID="lblFileUpload" CssClass="Headers" Style="font-size: 20px; margin-bottom: 10px;">Please use this feature to load excel file with keys into the system</asp:Label>
+            <asp:Table runat="server" Style="border: 0;">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:FileUpload runat="server" ID="fUpExcel" />
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:Button runat="server" ID="btnUpload" CssClass="mainButtons" OnClick="BtnUpload_Click" Style="padding: 10px;" Text="Upload the file" />
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+        </asp:Panel>
+
+        <asp:Panel runat="server" ID="pnlAdmin" Visible="false">
             <asp:GridView runat="server" ID="gvUsers" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
-                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true">
+                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="50%">
                 <Columns>
-                    <asp:BoundField HeaderText="LoginID" DataField="userId" />
-                    <asp:BoundField HeaderText="Full Name" DataField="userName" />
-                    <asp:BoundField HeaderText="Access Level" DataField="accessLevel" />
+                    <asp:BoundField HeaderText="LoginID" DataField="RguId" />
+                    <asp:BoundField HeaderText="Full Name" DataField="FullName" />
+                    <asp:BoundField HeaderText="Access Level" DataField="AccessLevel" />
                 </Columns>
             </asp:GridView>
+
+            <br />
+
+            <asp:TextBox runat="server" autocomplete="off" ID="txtRguId" PlaceHolder="RGU Login Id" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'RGU Login ID'" />
+            <asp:TextBox runat="server" autocomplete="off" ID="txtFullName" PlaceHolder="Full Name" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" />
+            <asp:DropDownList runat="server" ID="ddlAccess" CssClass="mainFilters" Style="width: 10em;">
+                <asp:ListItem Text="Read" Value="1"></asp:ListItem>
+                <asp:ListItem Text="Read/Write" Value="2"></asp:ListItem>
+                <asp:ListItem Text="Administrator" Value="3"></asp:ListItem>
+            </asp:DropDownList>
+            <asp:Button runat="server" ID="btnAddUser" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="BtnAddUser_Click" />
         </asp:Panel>
         </center>
 
