@@ -107,6 +107,14 @@ namespace RGU_Key_Management_Tool
                 }
             }
 
+            if (query.Contains("WHERE"))
+            {
+                query = query + " AND RentTo IS NULL ORDER BY rentalTime DESC";
+            } else
+            {
+                query = query + " WHERE RentTo IS NULL ORDER BY rentalTime DESC";
+            }
+
             SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["conString"].ToString());
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
@@ -123,7 +131,7 @@ namespace RGU_Key_Management_Tool
         protected void BtnResetFilter_Click1(object sender, EventArgs e)
         {
             DataTable dtRentals = new DataTable();
-            string query = "SELECT * FROM vwKeys ";
+            string query = "SELECT * FROM vwKeys WHERE RentTo IS NULL ORDER BY rentalTime DESC ";
 
             SqlConnection conn = new SqlConnection(ConfigurationManager.AppSettings["conString"].ToString());
             SqlCommand cmd = new SqlCommand(query, conn);

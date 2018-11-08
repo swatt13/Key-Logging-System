@@ -182,4 +182,3 @@ C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key M
 C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Debug\RGU Key Management Tool.csproj.CopyComplete
 C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Debug\RGU Key Management Tool.dll
 C:\Users\zayy\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Debug\RGU Key Management Tool.pdb
-C:\Users\irmmz\Documents\Visual Studio Projects\RGU Key Management Tool\RGU Key Management Tool\obj\Debug\RGU Key Management Tool.csprojAssemblyReference.cache
