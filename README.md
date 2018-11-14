@@ -5,3 +5,5 @@ RGU Key Management Tool is a web application using .NET framework with its inter
 The application uses local SQL based database.
 
 The best way to access the application’s repository is: Visual Studio 2017
+
+![main page](https://i.postimg.cc/DnkYPpgf/2018-11-14-15-23-49.png)
