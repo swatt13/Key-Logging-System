@@ -18,14 +18,14 @@ namespace RGU_Key_Management_Tool
                 LoadData();
             }
 
-            // Security lockdown, currently only restricted for my rgu login and personal login (can be easily changed to lookup administrators when user table is implemented)
-            if (!Page.User.Identity.Name.Contains("1403780") && !Page.User.Identity.Name.Contains("irm") && !Page.User.Identity.Name.Contains("zayy"))
-            {
-                pnlError.Visible = true;
-                pnlMaster.Visible = false;
-                lblError.Text = Page.User.Identity.Name + " is not permitted to use this application.";
-                lblAdmin.Text = "Please contact the administrator using links at the bottom of the page, if you require access.";
-            }
+            // Code for security lockdown, currently only restricted for my rgu login and personal login (can be easily changed to lookup administrators)
+            //if (!Page.User.Identity.Name.Contains("1403780") && !Page.User.Identity.Name.Contains("irm") && !Page.User.Identity.Name.Contains("zayy"))
+            //{
+            //    pnlError.Visible = true;
+            //    pnlMaster.Visible = false;
+            //    lblError.Text = Page.User.Identity.Name + " is not permitted to use this application.";
+            //    lblAdmin.Text = "Please contact the administrator using links at the bottom of the page, if you require access.";
+            //}
         }
 
         // Loading the data for both the main grid and user grid, can be seperated into 2 different methods to not load the second grid unnecessarly

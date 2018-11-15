@@ -29,59 +29,61 @@
             <asp:Button runat="server" ID="btnAdmin" CssClass="mainButtons" Width="42%" Text="Administration" OnClick="BtnAdmin_Click" />
         </asp:Panel>
 
-        <asp:Panel runat="server" ID="pnlReports" CssClass="reportPanel" Visible="true">
-            <asp:Button runat="server" ID="btnReport1" CssClass="reportButtons" Text="List completed rentals" OnClick="BtnReport1_Click" />
-            <br />
-            <asp:Button runat="server" ID="btnReport2" CssClass="reportButtons" Text="List over 14 days rentals" OnClick="BtnReport2_Click" />
-            <br />
-            <asp:Button runat="server" ID="btnReport3" CssClass="reportButtons" Text="List over 31 days rentals" OnClick="BtnReport3_Click" />
-        </asp:Panel>
+        <asp:Panel runat="server" ID="pnlRegisterScreen">
+            <asp:Panel runat="server" ID="pnlReports" CssClass="reportPanel" Visible="true">
+                <asp:Button runat="server" ID="btnReport1" CssClass="reportButtons" Text="List completed rentals" OnClick="BtnReport1_Click" />
+                <br />
+                <asp:Button runat="server" ID="btnReport2" CssClass="reportButtons" Text="List over 14 days rentals" OnClick="BtnReport2_Click" />
+                <br />
+                <asp:Button runat="server" ID="btnReport3" CssClass="reportButtons" Text="List over 31 days rentals" OnClick="BtnReport3_Click" />
+            </asp:Panel>
 
-        <asp:Panel runat="server" ID="pnlFilters" CssClass="sidePanel" Visible="true">
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter the identificator" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the identificator'" />
-            <br />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter the location" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the location'" />
-            <br />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtUserFilter" PlaceHolder="Enter user rented to" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter user rented to'" />
-            <asp:Button runat="server" ID="btnResetFilter" CssClass="applyFilter" Text="Reset entered filters" Style="padding: 10px;" OnClick="BtnResetFilter_Click1" />
-            <br />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtDateFilter" PlaceHolder="Enter rented from date" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter rented from date'" />
-            <asp:Button runat="server" ID="btnApplyFilter" CssClass="applyFilter" Text="Apply entered filters" Style="padding: 10px;" OnClick="BtnApplyFilter_Click1" />
-        </asp:Panel>
+            <asp:Panel runat="server" ID="pnlFilters" CssClass="sidePanel" Visible="true">
+                <asp:TextBox runat="server" autocomplete="off" ID="txtKeyFilter" PlaceHolder="Enter the identificator" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the identificator'" />
+                <br />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtRoomFilter" PlaceHolder="Enter the location" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the location'" />
+                <br />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtUserFilter" PlaceHolder="Enter user rented to" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter user rented to'" />
+                <asp:Button runat="server" ID="btnResetFilter" CssClass="applyFilter" Text="Reset entered filters" Style="padding: 10px;" OnClick="BtnResetFilter_Click1" />
+                <br />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtDateFilter" PlaceHolder="Enter rented from date" CssClass="mainFilters" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter rented from date'" />
+                <asp:Button runat="server" ID="btnApplyFilter" CssClass="applyFilter" Text="Apply entered filters" Style="padding: 10px;" OnClick="BtnApplyFilter_Click1" />
+            </asp:Panel>
 
-        <asp:Panel runat="server" ID="pnlRegister" Style="text-align: center;" Visible="true">
+            <asp:Panel runat="server" ID="pnlRegister" Style="text-align: center;" Visible="true">
 
-            <asp:TextBox runat="server" autocomplete="off" ID="txtRentalId" CssClass="mainFilters"  Visible="false" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Physical ID" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Physical ID'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Description" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Location" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Location'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtRenter" PlaceHolder="Renter Name" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Renter Name'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtFrom" PlaceHolder="From Date" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From Date'" />
-            <asp:TextBox runat="server" autocomplete="off" ID="txtTo" Visible="false" PlaceHolder="To Date" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To Date'" />
-            <asp:Button runat="server" ID="btnAddRental" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="BtnAddRental_Click" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtRentalId" CssClass="mainFilters" Visible="false" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtKeyId" PlaceHolder="Physical ID" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Physical ID'" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtKeyDesc" PlaceHolder="Description" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtKeyLoc" PlaceHolder="Location" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Location'" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtRenter" PlaceHolder="Renter Name" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Renter Name'" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtFrom" PlaceHolder="From Date" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From Date'" />
+                <asp:TextBox runat="server" autocomplete="off" ID="txtTo" Visible="false" PlaceHolder="To Date" CssClass="mainFilters" Style="width: 10em;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To Date'" />
+                <asp:Button runat="server" ID="btnAddRental" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="BtnAddRental_Click" />
 
-            <br />
-            <asp:Label runat="server" ID="lblAddError" Style="color: red; font-size: 18px; margin-bottom: 20px;" Text="Please make sure all the fields are filled in before submitting." Visible="false" />
-            <br />
+                <br />
+                <asp:Label runat="server" ID="lblAddError" Style="color: red; font-size: 18px; margin-bottom: 20px;" Text="Please make sure all the fields are filled in before submitting." Visible="false" />
+                <br />
 
-            <asp:GridView runat="server" ID="gvKeys" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
-                ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="100%" OnRowDataBound="gvKeys_RowDataBound" OnRowCommand="gvKeys_RowCommand">
-                <Columns>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:Button ID="btnEdit" CssClass="mainButtons" Width="80%" style="padding:5px; margin:5px;" runat="server" CommandName="EditRecord" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Edit" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:BoundField HeaderText="UniqueId" DataField="RentalId" />
-                    <asp:BoundField HeaderText="PhysicalId" DataField="KeyId" />
-                    <asp:BoundField HeaderText="Description" DataField="KeyDesc" />
-                    <asp:BoundField HeaderText="Location" DataField="KeyLoc" />
-                    <asp:BoundField HeaderText="Renter's Full Name" DataField="CurrentRenter" />
-                    <asp:BoundField HeaderText="From Date" DataField="RentFrom" />
-                    <asp:BoundField HeaderText="Return Date" DataField="RentTo" />
-                    <asp:BoundField HeaderText="Days rented" DataField="rentalTime" />
-                </Columns>
-            </asp:GridView>
+                <asp:GridView runat="server" ID="gvKeys" CssClass="mydatagrid" HeaderStyle-CssClass="header" RowStyle-CssClass="rows"
+                    ShowHeaderWhenEmpty="true" AutoGenerateColumns="false" AllowSorting="true" Width="100%" OnRowDataBound="gvKeys_RowDataBound" OnRowCommand="gvKeys_RowCommand">
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Button ID="btnEdit" CssClass="mainButtons" Width="80%" Style="padding: 5px; margin: 5px;" runat="server" CommandName="EditRecord" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" Text="Edit" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:BoundField HeaderText="UniqueId" DataField="RentalId" />
+                        <asp:BoundField HeaderText="PhysicalId" DataField="KeyId" />
+                        <asp:BoundField HeaderText="Description" DataField="KeyDesc" />
+                        <asp:BoundField HeaderText="Location" DataField="KeyLoc" />
+                        <asp:BoundField HeaderText="Renter's Full Name" DataField="CurrentRenter" />
+                        <asp:BoundField HeaderText="From Date" DataField="RentFrom" />
+                        <asp:BoundField HeaderText="Return Date" DataField="RentTo" />
+                        <asp:BoundField HeaderText="Days rented" DataField="rentalTime" />
+                    </Columns>
+                </asp:GridView>
+            </asp:Panel>
         </asp:Panel>
 
         <center>
@@ -127,7 +129,6 @@
             <asp:Button runat="server" ID="btnAddUser" CssClass="applyFilter" Text="Submit" Style="padding: 10px;" Width="10%" OnClick="BtnAddUser_Click" />
         </asp:Panel>
         </center>
-
     </asp:Panel>
 
     <asp:Panel runat="server" ID="pnlFooter" Visible="true" CssClass="master" Style="text-align: center; margin-top: 50px;">
